@@ -1,0 +1,87 @@
+[10/22/2020, 08:27:14 PM] DEBUG (nni.main/MainThread) START
+[10/22/2020, 08:27:14 PM] DEBUG (nni.main/MainThread) decoded exp_params: [{"authorName":"lscm","experimentName":"MBART","trialConcurrency":1,"maxExecDuration":144000,"maxTrialNum":9999,"trainingServicePlatform":"local","tuner":{"builtinTunerName":"CUHKPrototypeTuner"},"versionCheck":false,"clusterMetaData":[{"key":"codeDir","value":"/research/d3/zmwu/model/mbart/."},{"key":"command","value":"python wrap_program_mbart.py"}]}]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.main/MainThread) exp_params json obj: [{
+    "authorName": "lscm",
+    "experimentName": "MBART",
+    "trialConcurrency": 1,
+    "maxExecDuration": 144000,
+    "maxTrialNum": 9999,
+    "trainingServicePlatform": "local",
+    "tuner": {
+        "builtinTunerName": "CUHKPrototypeTuner"
+    },
+    "versionCheck": false,
+    "clusterMetaData": [
+        {
+            "key": "codeDir",
+            "value": "/research/d3/zmwu/model/mbart/."
+        },
+        {
+            "key": "command",
+            "value": "python wrap_program_mbart.py"
+        }
+    ]
+}]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.msg_dispatcher/MainThread) Assessor is not configured
+[10/22/2020, 08:27:14 PM] INFO (nni.msg_dispatcher_base/MainThread) Start dispatcher
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'IN00000000000712']
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/MainThread) Received command, data: [{"dropout": {"_type": "choice", "_value": [0.0, 0.1, 0.2, 0.3]}, "label_smooth": {"_type": "choice", "_value": [0.1, 0.2, 0.3]}, "lr": {"_type": "choice", "_value": [1e-05, 2e-05, 3e-05, 4e-05, 5e-05, 6e-05]}, "lr_scheduler": {"_type": "choice", "_value": ["inverse_sqrt", "polynomial_decay"]}, "warmup_update": {"_type": "choice", "_value": [2500, 3000, 3500, 4000, 4500, 5000]}, "optimizer": {"_type": "choice", "_value": ["adagrad", "adam"]}, "inter_op_parallelism_threads": {"_type": "choice", "_value": [1, 2, 3, 4]}, "intra_op_parallelism_threads": {"_type": "choice", "_value": [2, 4, 6, 8, 10, 12]}, "benchmark": {"_type": "choice", "_value": [0, 1]}, "allow_tf32": {"_type": "choice", "_value": [0, 1]}}]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:14 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Initialize], data: [OrderedDict([('dropout', OrderedDict([('_type', 'choice'), ('_value', [0.0, 0.1, 0.2, 0.3])])), ('label_smooth', OrderedDict([('_type', 'choice'), ('_value', [0.1, 0.2, 0.3])])), ('lr', OrderedDict([('_type', 'choice'), ('_value', [1e-05, 2e-05, 3e-05, 4e-05, 5e-05, 6e-05])])), ('lr_scheduler', OrderedDict([('_type', 'choice'), ('_value', ['inverse_sqrt', 'polynomial_decay'])])), ('warmup_update', OrderedDict([('_type', 'choice'), ('_value', [2500, 3000, 3500, 4000, 4500, 5000])])), ('optimizer', OrderedDict([('_type', 'choice'), ('_value', ['adagrad', 'adam'])])), ('inter_op_parallelism_threads', OrderedDict([('_type', 'choice'), ('_value', [1, 2, 3, 4])])), ('intra_op_parallelism_threads', OrderedDict([('_type', 'choice'), ('_value', [2, 4, 6, 8, 10, 12])])), ('benchmark', OrderedDict([('_type', 'choice'), ('_value', [0, 1])])), ('allow_tf32', OrderedDict([('_type', 'choice'), ('_value', [0, 1])]))])]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/Thread-1) Sending command, data: [b'ID00000000000000']
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'GE00000000000001']
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/MainThread) Received command, data: [1]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:14 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.RequestTrialJobs], data: [1]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.msg_dispatcher/Thread-1) requesting for generating params of [0]
+[10/22/2020, 08:27:14 PM] DEBUG (nni.tuner/Thread-1) generating param for 0
+[10/22/2020, 08:27:14 PM] DEBUG (nni.protocol/Thread-1) Sending command, data: [b'TR00000000000322{"parameter_id": 0, "parameter_source": "algorithm", "parameters": {"dropout": 0.0, "label_smooth": 0.1, "lr": 4e-05, "lr_scheduler": "inverse_sqrt", "warmup_update": 3000, "optimizer": "adagrad", "inter_op_parallelism_threads": 3, "intra_op_parallelism_threads": 8, "benchmark": 1, "allow_tf32": 1}, "parameter_index": 0}']
+[10/22/2020, 08:27:18 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:18 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:18 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:23 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:23 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:23 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:28 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:28 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:28 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:33 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:33 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:33 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:38 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:38 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:38 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:43 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:43 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:43 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:48 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:48 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:48 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:53 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:53 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:53 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:27:58 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:27:58 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:27:58 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:03 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:03 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:03 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:08 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:08 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:08 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:13 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:13 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:13 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:18 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:18 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:18 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:23 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:23 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:23 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:28 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:28 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:28 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
+[10/22/2020, 08:28:33 PM] DEBUG (nni.protocol/MainThread) Received command, header: [b'PI00000000000000']
+[10/22/2020, 08:28:33 PM] DEBUG (nni.protocol/MainThread) Received command, data: []
+[10/22/2020, 08:28:33 PM] DEBUG (nni.msg_dispatcher_base/Thread-1) process_command: command: [CommandType.Ping], data: []
